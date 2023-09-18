@@ -1,0 +1,23 @@
+@use '@sass/mixins/_utils.mixins.scss' as mut;
+@use '@sass/_utils.functions.scss' as ut;
+
+$articlesImg: "@assets/images/sources/Articles.webp";
+
+.sourcesSliderItem {
+  @include mut.sizedImportant(380px, 250px);
+  @include mut.full-rounded(30px);
+  display: flex;
+  gap: 10px;
+  @include mut.flex-centered();
+  @include mut.bg-image($articlesImg);
+
+  h1 {
+    color: white;
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sourcesSliderItem {
+     @include mut.sizedImportant($width: 250px, $height: 165px);
+  }
+}
