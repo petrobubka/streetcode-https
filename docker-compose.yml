@@ -18,7 +18,7 @@ services:
       - /etc/certbot/www:/var/www/certbot/:ro
       - /etc/certbot/conf:/etc/nginx/ssl/:ro
   frontend:
-    image: streetcodeua/streetcode_client:${DOCKER_TAG_FRONTEND}
+    image: streetcodeua/streetcode_client:latest
     pull_policy: always
     expose:
       - "80"
@@ -31,7 +31,7 @@ services:
       API_URL: ${ENV_API_BACKEND}
 
   backend:
-    image: streetcodeua/streetcode:${DOCKER_TAG_BACKEND}
+    image: streetcodeua/streetcode:latest
     pull_policy: always
     expose:
       - "80"
